@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InstaPay Shop Payment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-pink-100 via-rose-50 to-white flex items-center justify-center p-6">
+
+  <div class="w-full max-w-md bg-white/85 backdrop-blur-2xl border border-pink-100 rounded-[32px] shadow-2xl p-8 text-center">
+    <div class="flex flex-col items-center gap-4">
+      <div class="w-full max-w-[240px] h-[110px] rounded-[28px] bg-white flex items-center justify-center shadow-lg overflow-hidden border border-pink-100 p-4">
+        <img
+          src="https://raw.githubusercontent.com/moder-hue/test/refs/heads/main/326585456_476805731329113_4946294825581284066_n.png"
+          alt="Shop Logo"
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight text-black">
+          Shams Jewellery
+        </h1>
+        <p class="text-black/70 mt-2 text-sm">
+          Pay quickly and securely using InstaPay.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-100 rounded-3xl p-5 shadow-inner">
+      <p class="text-sm text-black/70 mb-2">Bank Account Number</p>
+      <p id="accountNumber" class="text-xl font-mono tracking-wider break-all text-black">
+        1013150210030201
+      </p>
+    </div>
+
+    <button
+      onclick="copyAccountNumber()"
+      class="mt-6 w-full bg-black hover:bg-neutral-900 transition-all duration-300 text-white font-semibold py-4 rounded-3xl shadow-lg hover:scale-[1.02] active:scale-[0.98] border border-pink-200"
+    >
+      Copy Account Number
+    </button>
+
+    <p class="mt-6 text-xs text-black/60 leading-relaxed">
+      After copying the account number, open InstaPay and complete your transfer.
+    </p>
+  </div>
+
+  <script>
+    function copyAccountNumber() {
+      const accountNumber = document.getElementById('accountNumber').innerText;
+      navigator.clipboard.writeText(accountNumber)
+        .then(() => {
+          alert('Bank account number copied successfully!');
+        })
+        .catch(() => {
+          alert('Failed to copy the account number.');
+        });
+    }
+  </script>
+
+</body>
+</html>
